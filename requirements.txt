@@ -1,0 +1,35 @@
+# ============================================================
+# gaming_behavior_ai - requirements.txt
+#
+# IMPORTANT: use Python 3.11 (64-bit) in your virtual environment.
+# mediapipe does not currently ship Windows wheels for Python 3.13+,
+# so a newer system Python will fail to install it.
+#
+# Do NOT "pip install -r requirements.txt" all at once yet.
+# Install each section only when we reach the matching stage -
+# see the comment above each block.
+# ============================================================
+
+# --- REQUIRED NOW (Stage 1: install these today) ---
+# Stages 2-9 use these: webcam capture, face/eye/head landmarks
+opencv-python
+mediapipe
+numpy
+pandas
+
+# --- REQUIRED SOON (install at Stage 10, not before) ---
+# Microphone capture + audio feature extraction
+sounddevice
+scipy
+librosa
+webrtcvad-wheels     # Windows-safe fork of webrtcvad; still `import webrtcvad`
+
+# --- REQUIRED LATER (install at Stage 16-17) ---
+# Anomaly detection + supervised classifier
+scikit-learn
+xgboost
+
+# --- OPTIONAL (install only if/when you decide you want it) ---
+matplotlib           # offline plots of baseline vs. current behavior
+# streamlit          # optional OFFLINE session-review dashboard (not the live camera HUD)
+# torch              # only for the Stage 23 LSTM/GRU experiment, CPU build is enough
